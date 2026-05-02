@@ -19,7 +19,3 @@ A simple JEE Main Predictor Website using:
 ## Hosting
 
 Hosted using GitHub Pages.
-
-## Live Website
-
-https://yourusername.github.io/jee-predictor/
