@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JEE Main Predictor 2026</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>JEE Main 2026 Predictor</h1>
+
+    <button id="themeBtn">🌙 Dark Mode</button>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <h2>Predict Your Rank, Percentile & NIT Colleges</h2>
+
+      <p>
+        Enter your JEE Main marks and instantly get your
+        expected percentile, rank and college predictions.
+      </p>
+    </section>
+
+    <section class="predictor-card">
+
+      <label>Enter Marks (0 - 300)</label>
+
+      <input
+        type="number"
+        id="marks"
+        placeholder="Example: 180"
+      >
+
+      <label>Select Category</label>
+
+      <select id="category">
+        <option>General</option>
+        <option>OBC-NCL</option>
+        <option>SC</option>
+        <option>ST</option>
+        <option>EWS</option>
+      </select>
+
+      <button class="predict-btn" onclick="predict()">
+        Predict Now
+      </button>
+
+    </section>
+
+    <section id="result" class="result-card"></section>
+
+  </main>
+
+  <footer>
+    <p>Built using HTML, CSS, JavaScript & C</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
