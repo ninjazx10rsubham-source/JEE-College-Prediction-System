@@ -1,22 +1,56 @@
-function predict() {
+function predict(){
+
+  const marks =
+    Number(document.getElementById("marks").value)
+
+  const category =
+    document.getElementById("category").value
+
+  if(marks < 0 || marks > 300){
+
+    alert("Enter valid marks between 0 and 300")
+
+    return
+  }
+
+  let closest = marksData[0]
+
+  for(let data of marksData){
+
+    if(
+      Math.abs(data.marks - marks)
+      <
+      Math.abs(closest.marks - marks)
+    ){
+      closest = data
+    }
+  }
+
+  let html = `
+
     <div class="result-box">
 
       <h2>Prediction Result</h2>
 
-      <p><strong>Marks:</strong> ${marks}</p>
+      <p>
+      <strong>Marks:</strong>
+      ${marks}
+      </p>
 
-      <p><strong>Estimated Percentile:</strong>
-      ${closest.percentile}</p>
+      <p>
+      <strong>Percentile:</strong>
+      ${closest.percentile}
+      </p>
 
-      <p><strong>Estimated Rank:</strong>
-      ${closest.rank}</p>
+      <p>
+      <strong>Estimated Rank:</strong>
+      ${closest.rank}
+      </p>
 
-      <p><strong>Performance:</strong>
-      ${performance}</p>
-
-      <h2 style="margin-top:25px;">
+      <h2 style="margin-top:20px;">
       Predicted Colleges
       </h2>
+
   `
 
   const filtered = colleges.filter(college =>
@@ -26,11 +60,11 @@ function predict() {
     closest.rank <= college.closingRank * 1.1
   )
 
-  if (filtered.length === 0) {
+  if(filtered.length === 0){
 
     html += `
       <p style="margin-top:15px;">
-      No colleges found for this range.
+      No colleges found.
       </p>
     `
   }
@@ -46,7 +80,8 @@ function predict() {
         <p>${college.branch}</p>
 
         <p>
-        Closing Rank: ${college.closingRank}
+        Closing Rank:
+        ${college.closingRank}
         </p>
 
       </div>
@@ -55,23 +90,25 @@ function predict() {
 
   html += `</div>`
 
-  document.getElementById('result').innerHTML = html
+  document.getElementById("result").innerHTML = html
 }
 
-const themeBtn = document.getElementById('themeBtn')
+const themeBtn =
+  document.getElementById("themeBtn")
 
 let darkMode = false
 
-themeBtn.addEventListener('click', () => {
+themeBtn.addEventListener("click", () => {
 
   darkMode = !darkMode
 
-  document.body.classList.toggle('dark-mode')
+  document.body.classList.toggle("dark-mode")
 
-  if (darkMode) {
-    themeBtn.innerText = '☀️ Light Mode'
+  if(darkMode){
+    themeBtn.innerText = "☀️ Light Mode"
   }
-  else {
-    themeBtn.innerText = '🌙 Dark Mode'
+  else{
+    themeBtn.innerText = "🌙 Dark Mode"
   }
+
 })
