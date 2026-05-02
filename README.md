@@ -1,21 +1,15 @@
-# JEE Main Predictor 2026
+# JEE Mains 2026 Predictor
 
-A simple JEE Main Predictor Website using:
+A Node.js terminal application for:
 
-- HTML
-- CSS
-- JavaScript
-- C Language Logic
+- Marks vs Percentile analysis
+- Rank estimation
+- NIT college prediction
+- Shift difficulty analysis
+- Category cutoff trends
+- CSV export
 
-## Features
+## Run
 
-- Rank Prediction
-- Percentile Prediction
-- NIT College Predictor
-- Mobile Responsive
-- Dark Mode
-- Modern UI
-
-## Hosting
-
-Hosted using GitHub Pages.
+```bash
+node jee_predictor.js
