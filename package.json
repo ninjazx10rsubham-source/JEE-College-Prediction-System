@@ -1,9 +1,0 @@
-{
-  "name": "jee-mains-predictor",
-  "version": "1.0.0",
-  "description": "JEE Mains 2026 College Predictor & Marks Rank Analyser",
-  "main": "jee_predictor.js",
-  "scripts": {
-    "start": "node jee_predictor.js"
-  }
-}
